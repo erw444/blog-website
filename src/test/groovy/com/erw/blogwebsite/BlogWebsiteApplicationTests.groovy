@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner)
 @SpringBootTest
-class BlogWebsiteApplicationTests {
+class SpringGroovyAngularjsApplicationTests {
 
 	@Test
 	void contextLoads() {
