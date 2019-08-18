@@ -16,8 +16,14 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.codehaus.groovy:groovy'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.codehaus.groovy:groovy'
+	implementation 'com.h2database:h2'
+	implementation "org.liquibase:liquibase-core"
+	compile 'javax.inject:javax.inject:1'
+	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
