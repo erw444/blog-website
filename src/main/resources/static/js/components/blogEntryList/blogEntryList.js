@@ -5,7 +5,7 @@
 		var ctrl = this;
 
 		ctrl.$onChanges = function(){
-			if(ctrl.blogEntries){
+			if(ctrl.blogEntries && ctrl.blogEntries.length){
 				ctrl.localBlogList = angular.copy(ctrl.blogEntries);
 			}
 		}

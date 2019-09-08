@@ -19,4 +19,9 @@ class BlogEntryService {
 			throw new Exception("Empty Title or Body.")
 		}
 	}
+	
+	def getAllBlogEntries() {
+		List<Blog> blogs = blogRepo.findAll();
+		return blogs
+	}
 }

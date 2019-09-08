@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   angular.module('app')
-  .controller('NewEntryController', ['$scope','NewBlogEntry', '$ngConfirm', function($scope, NewBlogEntry, $ngConfirm){
+  .controller('NewEntryController', ['$scope','Blogs', '$ngConfirm', function($scope, Blogs, $ngConfirm){
     $scope.model = {};
     $scope.submit = submit;
     $scope.editor =  new Quill('#editor-container', {
@@ -21,7 +21,7 @@
 
     
     function submit(){
-      NewBlogEntry.save($scope.model).$promise.then(
+      Blogs.save($scope.model).$promise.then(
         function(data){
           $scope.model= {};
           $scope.editor.setContents([{ insert: '\n' }]);

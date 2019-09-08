@@ -1,9 +1,10 @@
 (function(){
   'use strict';
   angular.module('app')
-  .factory('NewBlogEntry', ['$resource', function($resource) {
-    return $resource('/new/blog', {}, {
-      update: {method: 'PUT'}
+  .factory('Blogs', ['$resource', function($resource) {
+    return $resource('/blog', {}, {
+      query: {method: 'GET', url: '/blogs', isArray: true},
+      save: {method: 'POST', url: '/new/blog'}
     });
   }]);
 })();
