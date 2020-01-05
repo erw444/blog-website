@@ -16,6 +16,19 @@ repositories {
 	jcenter()
 }
 
+def Properties localBootRunProperties() {
+	Properties p = new Properties();
+	p.load(new FileInputStream(
+			file(project.projectDir).absolutePath + "/src/main/resources/application-dev.properties"))
+	return p;
+}
+
+bootRun {
+	doFirst {
+		bootRun.systemProperties = localBootRunProperties()
+	}
+}
+
 dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	
@@ -31,3 +44,4 @@ dependencies {
 	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.0.0")
 	testImplementation 'org.mockito:mockito-core:2.7.22'
 }
+

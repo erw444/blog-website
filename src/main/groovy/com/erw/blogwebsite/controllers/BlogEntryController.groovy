@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 class BlogEntryController {
 	@Inject BlogEntryService blogEntryService
 	
-	@PostMapping(value="/new/blog")
+	@PostMapping(value="/blog/new")
 	@ResponseBody
 	def addNewBlogEntry(@RequestBody Blog blog) {
 		try {
@@ -25,7 +25,7 @@ class BlogEntryController {
 		}
 	}
 	
-	@GetMapping(value="/blogs")
+	@GetMapping(value="/blog/all")
 	@ResponseBody
 	def getAllBlogEntries() {
 		blogEntryService.getAllBlogEntries();
